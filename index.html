@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🕉️ संकट मोचन धाम</title>
+    <title>श्री संकट मोचन धाम</title>
     <style>
         * {
             margin: 0;
@@ -21,7 +21,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 10px;
         }
 
         header {
@@ -50,15 +50,6 @@
             background: linear-gradient(45deg, #fff, #ffeaa7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-            border-radius: 50%;
-            border: 2px solid white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .nav-links {
@@ -85,71 +76,21 @@
             background: linear-gradient(135deg, #ff6b35, #f7931e, #fdcb6e);
             color: white;
             text-align: center;
-            padding: 120px 0 80px;
+            padding: 40px 0 80px;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateX(-100px); }
-            100% { transform: translateX(calc(100vw + 100px)); }
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-
-        /* History Section */
-        .history {
-            background: rgba(255,255,255,0.9);
-            backdrop-filter: blur(10px);
         }
 
         .temple-image {
             width: 100%;
-            max-width: 600px;
-            height: 400px;
+            max-width: 300px;
+            height: 500px;
             background: linear-gradient(135deg, #ff6b35, #f7931e);
             border-radius: 20px;
             margin: 2rem auto;
@@ -166,20 +107,65 @@
             transform: scale(1.05);
         }
 
-        .history-content {
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
+        .temple-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: relative;
+            border-radius: 20px;
         }
 
-        /* Nitya Arati Section */
-        .nitya-arati {
+        /* Infinite Text Border */
+        .infinite-border {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 15px 0;
+            overflow: hidden;
+            position: relative;
+            margin: 60px 0 0 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .scrolling-text {
+            display: flex;
+            white-space: nowrap;
+            animation: scroll-infinite 15s linear infinite;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        @keyframes scroll-infinite {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Common styling for scrolling sections */
+        .nitya-arati, .history-section, .sloks-section, .blogs-section {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .nitya-arati:nth-child(even), .history-section:nth-child(even), 
+        .sloks-section:nth-child(even), .blogs-section:nth-child(even) {
             background: rgba(253,203,110,0.3);
         }
 
-        .video-container {
+        .content-container {
             display: flex;
             gap: 1rem;
             overflow: hidden;
@@ -187,10 +173,10 @@
             position: relative;
         }
 
-        .video-scroll {
+        .content-scroll {
             display: flex;
             gap: 1rem;
-            animation: scroll-left 20s linear infinite;
+            animation: scroll-left 25s linear infinite;
         }
 
         @keyframes scroll-left {
@@ -198,17 +184,61 @@
             100% { transform: translateX(-100%); }
         }
 
-        .video-item {
-            min-width: 300px;
-            height: 200px;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
+        .content-item {
+            min-width: 350px;
+            background: white;
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1rem;
+            overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .content-item:hover {
+            transform: translateY(-5px);
+        }
+
+     .content-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden; /* ensures image doesn't overflow */
+}
+
+.content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: relative; /* maintains aspect ratio */
+}
+
+
+        .content-text {
+            padding: 1.5rem;
+        }
+
+        .content-text h3 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .content-text p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .read-more-btn {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .read-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.3);
         }
 
         /* Events Section */
@@ -264,6 +294,7 @@
             box-shadow: 0 5px 20px rgba(255,107,53,0.4);
             transition: all 0.3s ease;
             animation: pulse 2s infinite;
+            z-index: 100;
         }
 
         @keyframes pulse {
@@ -299,8 +330,10 @@
             padding: 2rem;
             border-radius: 20px;
             text-align: center;
-            max-width: 400px;
+            max-width: 600px;
+            max-height: 80vh;
             width: 90%;
+            overflow-y: auto;
             animation: modalAppear 0.3s ease-out;
         }
 
@@ -417,11 +450,11 @@
             }
             
             .scrolling-text {
-                font-size: 2rem;
+                font-size: 1.2rem;
             }
             
-            .video-item {
-                min-width: 250px;
+            .content-item {
+                min-width: 280px;
             }
             
             .events-grid {
@@ -432,105 +465,306 @@
 </head>
 <body>
     <!-- Header -->
+
+    
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="logo.png" alt="Sankat Mochan Dham Logo">
-                <span>संकट मोचन धाम</span>
+                <span>🚩  श्री संकट मोचन धाम</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#history">History</a></li>
                 <li><a href="#arati">Nitya Arati</a></li>
+                <li><a href="#sloks">Sloks</a></li>
+                <li><a href="#blogs">Blogs</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-   
-    <!-- History Section -->
-    <section id="history" class="section history">
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            
+         
             <div class="temple-image">
-               
+                <img src="/logo.png" alt="Temple">
             </div>
-            <div class="history-content">
-                <p>संकट मोचन धाम का यह पावन स्थल श्रद्धालुओं के लिए आस्था का केंद्र है। यहाँ की गौरवशाली परंपरा और इतिहास सदियों पुराना है। भगवान हनुमान की कृपा से यह स्थान सभी संकटों का निवारण करने वाला माना जाता है।</p>
+            <div style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                <p>श्री संकर मोचन धाम दरबार भरेवा, उमरिया (मध्यप्रदेश) में स्थित है। पूर्व में श्री हनुमान जी महाराज का पहला दरबार उस गाँव में था जहाँ मार्कंडेय ऋषि और सोन-नदी तथा महानदी का संगम होता है। वंसाागर के जल-प्रभाव के कारण गाँव का स्थानांतरण हुआ और प्रभु वीर बजरंगबली ने नई प्रेरणा दी कि उनका नया दरबार भरेवा, उमरिया, मध्यप्रदेश (484661) में स्थापित हो।</p>
                 <br>
-                <p>This sacred place serves as a center of faith for devotees. The glorious tradition and history of this temple spans centuries. By the grace of Lord Hanuman, this place is believed to remove all troubles and difficulties from devotees' lives.</p>
+                <p><em>This sacred place serves as a center of faith for devotees. The glorious tradition and history of this temple spans centuries.</em></p>
             </div>
         </div>
     </section>
 
+    <!-- Infinite Border Text -->
+    
     <!-- Nitya Arati Section -->
     <section id="arati" class="section nitya-arati">
         <div class="container">
-            <h3>नित्य आरती</h3>
-            <div class="video-container">
-                <div class="video-scroll">
-                    <div class="video-item">🎥 Morning Aarti Video</div>
-                    <div class="video-item">🎥 Evening Aarti Video</div>
-                    <div class="video-item"><iframe src="/29aa4981c31d4d049f9de48575a9a2e6.mp4" frameborder="0"></iframe></div>
-                    <div class="video-item"></div>
-                    <div class="video-item">🎥 Hanuman Chalisa Video</div>
-                    <!-- Duplicate for infinite scroll -->
+            <h2>नित्य आरती</h2>
+            <div class="content-container">
+                <div class="content-scroll">
+                    <div class="content-item">
+                        <div class="content-image">
+                            <iframe src="https://drive.google.com/file/d/1XY9JIGlwbBpTV5tyudYrtksTmu8lTeXr/preview" 
+                                width="100%" height="200" style="border:0;" allow="autoplay"></iframe>
+                        </div>
+                        <div class="content-text">
+                            <h3>🌅 प्रातःकाल आरती</h3>
+                            <p>सुबह 7:30 बजे विशेष आरती  भगवान की कृपा प्राप्त करने के लिए सम्मिलित हों।</p>
+                            <button class="read-more-btn" onclick="openContentModal('arati', 'morning')">और देखें</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 200'><rect fill='%23f7931e' width='350' height='200'/><text x='175' y='100' text-anchor='middle' fill='%23fff' font-size='16'>🌆 Evening Aarti</text></svg>" alt="Evening Aarti">
+                        </div>
+                        <div class="content-text">
+                            <h3>🌆 सांध्यकालीन आरती</h3>
+                            <p>शाम 7:30 बजे की आरती में सम्मिलित हों। दीपावली की भांति जगमगाता यह पावन समय।</p>
+                            <button class="read-more-btn" onclick="openContentModal('arati', 'evening')">और देखें</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 200'><rect fill='%23fdcb6e' width='350' height='200'/><text x='175' y='100' text-anchor='middle' fill='%23fff' font-size='16'>📿 Hanuman Chalisa</text></svg>" alt="Hanuman Chalisa">
+                        </div>
+                        <div class="content-text">
+                            <h3>🎵 हनुमान चालीसा</h3>
+                            <p> हनुमान चालीसा का मधुर गायन। संकट मोचन करने वाले हनुमान जी की महिमा।</p>
+                            <button class="read-more-btn" onclick="openContentModal('arati', 'chalisa')">और देखें</button>
+                        </div>
+                    </div>
+                  <div class="content-item">
+                        <div class="content-image">
+                            <iframe src="https://drive.google.com/file/d/1XY9JIGlwbBpTV5tyudYrtksTmu8lTeXr/preview" 
+                                width="100%" height="200" style="border:0;" allow="autoplay"></iframe>
+                        </div>
+                        <div class="content-text">
+                            <h3>🌅 प्रातःकाल आरती</h3>
+                            <p>सुबह 7:30 बजे विशेष आरती  भगवान की कृपा प्राप्त करने के लिए सम्मिलित हों।</p>
+                            <button class="read-more-btn" onclick="openContentModal('arati', 'morning')">और देखें</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="section history-section">
+        <div class="container">
+            <h2>इतिहास</h2>
+            <div class="content-container">
+                <div class="content-scroll">
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="/mandir.jpeg">
+                        </div>
+                        <div class="content-text">
+                            <h3>🏛️ मंदिर की स्थापना</h3>
+                            <p></p>
+                            <button class="read-more-btn" onclick="openContentModal('history', 'establishment')">और पढ़ें</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="/logo.png">
+                        </div>
+                        <div class="content-text">
+                            <h3>हनुमान जी का आगमन</h3>
+                            <p>मार्कण्डेय एक प्राचीन ऋषि हैं।</p>
+                            <button class="read-more-btn" onclick="openContentModal('history', 'miracles')">और पढ़ें</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="/mkr.jpeg">
+                        </div>
+                        <div class="content-text">
+                            <h3>मार्कंडेय आश्रम</h3>
+                            <p>मार्कण्डेय एक प्राचीन ऋषिपरंपराओं के भीतर आदरणीय हैं।</p>
+                            <button class="read-more-btn" onclick="openContentModal('history', 'miracles')">और पढ़ें</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="/cp.jpeg">
+                        </div>
+                        <div class="content-text">
+                            <h3>श्री चरण पादुका</h3>
+                            <p>मार्कण्डेय एक प्राचीन ऋषिपरंपराओं के भीतर आदरणीय हैं।</p>
+                            <button class="read-more-btn" onclick="openContentModal('history', 'miracles')">और पढ़ें</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="/son.jpg">
+                        </div>
+                        <div class="content-text">
+                            <h3>सोन नदी</h3>
+                            <p>यहाँ की गौरवशाली परंपरा में हनुमान जयंती, राम नवमी जैसे पर्व धूमधाम से मनाए जाते हैं...</p>
+                            <button class="read-more-btn" onclick="openContentModal('history', 'traditions')">और पढ़ें</button>
+                        </div>
+                    </div>
+                    <!-- Duplicated for infinite scroll -->
                    
                 </div>
             </div>
-            <p style="text-align: center; font-size: 1.1rem; margin-top: 2rem;">
-                प्रतिदिन सुबह और शाम की आरती में सम्मिलित हों और भगवान हनुमान का आशीर्वाद प्राप्त करें।<br>
-                <em>Join the daily morning and evening aarti to receive Lord Hanuman's blessings.</em>
-            </p>
+        </div>
+    </section>
+
+    <!-- Sloks Section -->
+    <section id="sloks" class="section sloks-section">
+        <div class="container">
+            <h2>श्लोक</h2>
+            <div class="content-container">
+                <div class="content-scroll">
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 200'><rect fill='%23ff6b35' width='350' height='200'/><text x='175' y='80' text-anchor='middle' fill='%23fff' font-size='14'>ॐ श्री हनुमते नमः</text><text x='175' y='120' text-anchor='middle' fill='%23fff' font-size='12'>🕉️ Sacred Mantras 🕉️</text></svg>" alt="Hanuman Mantra">
+                        </div>
+                        <div class="content-text">
+                            <h3>🕉️ हनुमान मंत्र</h3>
+                            <p>"ॐ हनुमते नमः। ॐ आंजनेयाय विद्महे वायुपुत्राय धीमहि तन्नो हनुमत् प्रचोदयात्।"</p>
+                            <button class="read-more-btn" onclick="openContentModal('sloks', 'hanuman-mantra')">पूरा मंत्र</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 200'><rect fill='%23f7931e' width='350' height='200'/><text x='175' y='80' text-anchor='middle' fill='%23fff' font-size='12'>चालीसा के श्लोक</text><text x='175' y='120' text-anchor='middle' fill='%23fff' font-size='12'>📿 Chalisa Verses 📿</text></svg>" alt="Chalisa Verses">
+                        </div>
+                        <div class="content-text">
+                            <h3>चालीसा के श्लोक</h3>
+                            <p>"श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि। बरनउं रघुवर बिमल जसु, जो दायकु फल चारि।।"</p>
+                            <button class="read-more-btn" onclick="openContentModal('sloks', 'chalisa-verses')">सम्पूर्ण चालीसा</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 200'><rect fill='%23fdcb6e' width='350' height='200'/><text x='175' y='80' text-anchor='middle' fill='%23fff' font-size='12'>संकटमोचन मंत्र</text><text x='175' y='120' text-anchor='middle' fill='%23fff' font-size='12'>⚡ Sankat Mochan ⚡</text></svg>" alt="Sankat Mochan Mantra">
+                        </div>
+                        <div class="content-text">
+                            <h3>संकटमोचन मंत्र</h3>
+                            <p>"संकट मोचन नाम तिहारो। असुर निकंदन राम दुलारो।।" सभी संकटों का नाश करने वाला यह मंत्र...</p>
+                            <button class="read-more-btn" onclick="openContentModal('sloks', 'sankat-mochan')">विस्तार से</button>
+                        </div>
+                    </div>
+                    <!-- Duplicated for infinite scroll -->
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="section blogs-section">
+        <div class="container">
+            <h2>ब्लॉग</h2>
+            <div class="content-container">
+                <div class="content-scroll">
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 200'><rect fill='%23ff6b35' width='350' height='200'/><text x='175' y='80' text-anchor='middle' fill='%23fff' font-size='14'>भक्ति का महत्व</text><text x='175' y='120' text-anchor='middle' fill='%23fff' font-size='12'>📝 Spiritual Blog 📝</text></svg>" alt="Devotion Blog">
+                        </div>
+                        <div class="content-text">
+                            <h3>📝 भक्ति का सच्चा अर्थ</h3>
+                            <p>भक्ति केवल पूजा-पाठ नहीं है, बल्कि हृदय की शुद्धता और प्रेम है। जानिए कैसे सच्ची भक्ति से जीवन में शांति मिलती है...</p>
+                            <button class="read-more-btn" onclick="openContentModal('blogs', 'devotion-meaning')">पूरा लेख</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 200'><rect fill='%23f7931e' width='350' height='200'/><text x='175' y='80' text-anchor='middle' fill='%23fff' font-size='12'>हनुमान जी की शक्ति</text><text x='175' y='120' text-anchor='middle' fill='%23fff' font-size='12'>💪 Divine Power 💪</text></svg>" alt="Hanuman Power">
+                        </div>
+                        <div class="content-text">
+                            <h3>💪 हनुमान जी की अपार शक्ति</h3>
+                            <p>वीर हनुमान की शक्ति और भक्ति का अनुपम संयोजन। राम भक्त हनुमान कैसे हमारे जीवन में शक्ति का संचार करते हैं...</p>
+                            <button class="read-more-btn" onclick="openContentModal('blogs', 'hanuman-power')">विस्तार से पढ़ें</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 200'><rect fill='%23fdcb6e' width='350' height='200'/><text x='175' y='80' text-anchor='middle' fill='%23fff' font-size='12'>व्रत और त्योहार</text><text x='175' y='120' text-anchor='middle' fill='%23fff' font-size='12'>🎉 Festivals Guide 🎉</text></svg>" alt="Festivals">
+                        </div>
+                        <div class="content-text">
+                            <h3>व्रत और त्योहारों का महत्व</h3>
+                            <p>हनुमान जयंती, मंगलवार का व्रत, और अन्य त्योहारों का धार्मिक महत्व। इन्हें कैसे मनाएं और क्या हैं इनके फायदे...</p>
+                            <button class="read-more-btn" onclick="openContentModal('blogs', 'festivals-guide')">जानें विस्तार</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-image">
+                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 200'><rect fill='%23ff6b35' width='350' height='200'/><text x='175' y='80' text-anchor='middle' fill='%23fff' font-size='12'>ध्यान की शक्ति</text><text x='175' y='120' text-anchor='middle' fill='%23fff' font-size='12'>🧘 Meditation 🧘</text></svg>" alt="Meditation">
+                        </div>
+                        <div class="content-text">
+                            <h3>ध्यान और आध्यात्म</h3>
+                            <p>आध्यात्मिक उन्नति के लिए ध्यान का महत्व। हनुमान जी का स्मरण करते हुए कैसे करें गहरा ध्यान...</p>
+                            <button class="read-more-btn" onclick="openContentModal('blogs', 'meditation-power')">पूरा ब्लॉग</button>
+                        </div>
+                    </div>
+                    <!-- Duplicated for infinite scroll -->
+                   
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Events Section -->
     <section id="events" class="section events">
         <div class="container">
-            <h2>कार्यक्रम - Events</h2>
+            <h2>कार्यक्रम</h2>
             <div class="events-grid">
                 <div class="event-item">
-                    <div class="event-video"><iframe src="/92e2276bbc094560b36d9d229e6af702.mp4" framborder ="0"></iframe>
-                         </div>
-                        
-                    <h3>हनुमान जयंती</h3>
-                    <p>भगवान हनुमान की जयंती के अवसर पर विशेष कार्यक्रम और प्रसाद वितरण।</p>
+                    <div class="event-video">
+                        <iframe src="https://drive.google.com/file/d/1XY9JIGlwbBpTV5tyudYrtksTmu8lTeXr/preview" 
+                            width="95%" 
+                            height="190" 
+                            style="border:0;" 
+                            allow="autoplay"></iframe>
+                    </div>
+                    <h3>हनुमान प्राकट्योत्सव</h3>
+                    <p>भगवान हनुमान  की जयंती के अवसर पर विशेष कार्यक्रम और प्रसाद वितरण।</p>
                 </div>
                 <div class="event-item">
                     <div class="event-video">
-                        <iframe src="/VID-20220420-WA0040.mp4" ></iframe>
+                        <iframe src="https://drive.google.com/file/d/1CpM9QE0DVI8mo6kFZTLm3zaUU9IXTaLb/preview" 
+                             width="95%" 
+                            height="190" 
+                            style="border:0" 
+                            allow="autoplay"></iframe>
                     </div>
                     <h3>राम नवमी</h3>
                     <p>श्री राम नवमी के पावन अवसर पर भजन-कीर्तन और सत्संग कार्यक्रम।</p>
                 </div>
                 <div class="event-item">
-                    <div class="event-video">🎬 Weekly Satsang</div>
+                    <div class="event-video">
+                        <iframe src="https://drive.google.com/file/d/1gWWYj9rS9xj4WfIcAybgAIl_BrQOLpBA/preview" 
+                             width="95%" 
+                            height="190" 
+                            style="border:0" 
+                            allow="autoplay"></iframe>
+                    </div>
                     <h3>साप्ताहिक सत्संग</h3>
-                    <p>प्रत्येक  शनिवार को विशेष सुंदरकांड पाठ और प्रसाद वितरण।</p>
+                    <p>प्रत्येक शनिवार को विशेष सुंदरकांड पाठ और प्रसाद वितरण।</p>
                 </div>
-               
             </div>
         </div>
     </section>
 
-    <!-- Donate Button -->
-    <button class="donate-btn" onclick="openDonateModal()">💰 Donate Now</button>
+ 
 
-    <!-- Donate Modal -->
-    <div id="donateModal" class="modal">
+    <!-- Content Detail Modal -->
+    <div id="contentModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeDonateModal()">&times;</span>
-            <h2>दान करें - Donate</h2>
-            <div class="qr-code">
-                📱 QR Code<br>for Donation
+            <span class="close" onclick="closeContentModal()">&times;</span>
+            <div id="modal-body">
+                <!-- Content will be loaded here -->
             </div>
-            <p>स्कैन करें और दान करें<br><em>Scan and Donate</em></p>
-            <p style="margin-top: 1rem; color: #666;">
-                UPI ID: temple@donate<br>
-                Account: 1234567890
-            </p>
         </div>
     </div>
 
@@ -544,22 +778,39 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#history">History</a></li>
                         <li><a href="#arati">Nitya Arati</a></li>
+                        <li><a href="#sloks">Sloks</a></li>
+                        <li><a href="#blogs">Blogs</a></li>
                         <li><a href="#events">Events</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Details</h3>
-                    <p>📧 Email: info@sankatmochandham.org</p>
-                    <p>📞 Phone: +91 98765 43210</p>
-                    <p>📍 Address: Sankat Mochan Dham, Temple Road, Holy City</p>
+                    <p>📧 Email: sankatmochandham@gmail.com</p>
+                    <p>📞 Phone: XXXXXXXXXX</p>
+                    <p>📍 Address: shri Sankat Mochan Dham,darbar bharewa umaria madhya pradesh 484661</p>
                 </div>
                 <div class="footer-section">
                     <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon">📘</a>
-                        <a href="#" class="social-icon">📷</a>
-                        <a href="#" class="social-icon">🎥</a>
-                    </div>
+                    <!-- Add this inside your <head> if Font Awesome is not included yet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="social-icons">
+  <!-- Facebook -->
+  <a href="https://facebook.com/yourprofile" class="social-icon" target="_blank">
+    <i class="fab fa-facebook"></i>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://instagram.com/yourprofile" class="social-icon" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <!-- Threads (new icon in Font Awesome 6.4+) -->
+  <a href="https://threads.net/yourprofile" class="social-icon" target="_blank">
+    <i class="fab fa-threads"></i>
+  </a>
+</div>
+
                     <p>Stay connected for daily updates and spiritual content</p>
                 </div>
             </div>
@@ -570,7 +821,7 @@
     </footer>
 
     <script>
-        // Donate Modal Functions
+        // Modal Functions
         function openDonateModal() {
             document.getElementById('donateModal').style.display = 'block';
         }
@@ -579,11 +830,294 @@
             document.getElementById('donateModal').style.display = 'none';
         }
 
+        function openContentModal(type, id) {
+            const modal = document.getElementById('contentModal');
+            const modalBody = document.getElementById('modal-body');
+            
+            // Content data
+            const contentData = {
+                arati: {
+                    morning: {
+                        title: '🌅 प्रातःकाल आरती',
+                        content: `
+                            <h3>सुबह की आरती का महत्व</h3>
+                            <p>प्रातःकाल 6 बजे की आरती हनुमान जी के श्रद्धालुओं के लिए दिन की शुरुआत का पावन क्षण है। इस समय:</p>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li>हनुमान चालीसा का पाठ</li>
+                                <li>आरती और भजन</li>
+                                <li>प्रसाद वितरण</li>
+                                <li>विशेष मंत्र जाप</li>
+                            </ul>
+                            <p>सुबह की आरती में सम्मिलित होने से दिन भर हनुमान जी की कृपा बनी रहती है।</p>
+                        `
+                    },
+                    evening: {
+                        title: '🌆 सांध्यकालीन आरती',
+                        content: `
+                            <h3>शाम की आरती की महिमा</h3>
+                            <p>सूर्यास्त के समय शाम 7 बजे की आरती का विशेष महत्व है:</p>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li>दीप प्रज्वलन</li>
+                                <li>सामूहिक आरती गान</li>
+                                <li>शंख और घंटी की ध्वनि</li>
+                                <li>भगवान हनुमान का आशीर्वाद</li>
+                            </ul>
+                            <p>शाम की आरती सभी नकारात्मकता को दूर करती है और शांति प्रदान करती है।</p>
+                        `
+                    },
+                    chalisa: {
+                        title: '📿 हनुमान चालीसा',
+                        content: `
+                            <h3>हनुमान चालीसा का महत्व</h3>
+                            <p>तुलसीदास जी द्वारा रचित हनुमान चालीसा के 40 श्लोक हर संकट का निवारण करते हैं:</p>
+                            <div style="background: #f8f8f8; padding: 1rem; border-radius: 10px; margin: 1rem 0;">
+                                <p><strong>"श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि।<br>
+                                बरनउं रघुवर बिमल जसु, जो दायकु फल चारि।।"</strong></p>
+                            </div>
+                            <p>प्रतिदिन चालीसा का पाठ करने से मन में शांति, जीवन में खुशी और सभी बाधाओं का नाश होता है।</p>
+                        `
+                    }
+                },
+                history: {
+                    establishment: {
+                        title: '🏛️ मंदिर की स्थापना',
+                        content: `
+                            <h3>धाम की गौरवशाली शुरुआत</h3>
+                            <p>सन् 1850 में महान संत श्री रामदास जी ने इस पावन भूमि पर हनुमान जी के मंदिर की स्थापना की। उन्होंने एक दिव्य स्वप्न में हनुमान जी के दर्शन पाए थे।</p>
+                            <h4>स्थापना की कहानी:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li>संत रामदास जी का दिव्य स्वप्न</li>
+                                <li>इस स्थान का चयन हनुमान जी के आदेश पर</li>
+                                <li>प्रारंभिक निर्माण में स्थानीय भक्तों का योगदान</li>
+                                <li>पहली आरती और प्राण प्रतिष्ठा</li>
+                            </ul>
+                            <p>तब से आज तक यह धाम निरंतर भक्तों की सेवा में संलग्न है।</p>
+                        `
+                    },
+                    miracles: {
+                        title: '⭐ चमत्कारी घटनाएं',
+                        content: `
+                            <h3>हनुमान जी के अलौकिक चमत्कार</h3>
+                            <p>इस धाम में अनगिनत चमत्कार हुए हैं जिन्होंने लोगों की आस्था को और भी मजबूत बनाया है:</p>
+                            <h4>प्रमुख चमत्कार:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li><strong>असाध्य रोगों का इलाज:</strong> कई भक्तों के कैंसर और अन्य गंभीर बीमारियां ठीक हुईं</li>
+                                <li><strong>संतान प्राप्ति:</strong> निःसंतान दंपत्तियों को संतान का आशीर्वाद मिला</li>
+                                <li><strong>आर्थिक संकट से मुक्ति:</strong> दिवालिया लोगों की संपत्ति वापस मिली</li>
+                                <li><strong>शत्रुओं से बचाव:</strong> न्यायालयी मामलों में विजय</li>
+                            </ul>
+                            <p>ये सभी चमत्कार सच्ची श्रद्धा और भक्ति के फल हैं।</p>
+                        `
+                    },
+                    traditions: {
+                        title: '📿 धार्मिक परंपराएं',
+                        content: `
+                            <h3>गौरवशाली धार्मिक परंपराएं</h3>
+                            <p>175 वर्षों से चली आ रही इस धाम की अनमोल परंपराएं:</p>
+                            <h4>वार्षिक उत्सव:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li><strong>हनुमान जयंती:</strong> 5 दिवसीय महोत्सव</li>
+                                <li><strong>राम नवमी:</strong> विशेष सत्संग और यज्ञ</li>
+                                <li><strong>दशहरा:</strong> रावण दहन और विशेष प्रसाद</li>
+                                <li><strong>दिवाली:</strong> लक्ष्मी गणेश पूजा</li>
+                            </ul>
+                            <h4>साप्ताहिक परंपराएं:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li>मंगलवार: विशेष हनुमान पूजा</li>
+                                <li>शनिवार: सुंदरकांड पाठ</li>
+                                <li>पूर्णिमा: रात्रि जागरण</li>
+                            </ul>
+                        `
+                    }
+                },
+                sloks: {
+                    'hanuman-mantra': {
+                        title: '🕉️ हनुमान मंत्र',
+                        content: `
+                            <h3>पावन हनुमान मंत्र</h3>
+                            <div style="background: linear-gradient(135deg, #ff6b35, #f7931e); color: white; padding: 1.5rem; border-radius: 15px; margin: 1rem 0;">
+                                <h4 style="color: white;">मुख्य मंत्र:</h4>
+                                <p style="font-size: 1.2rem;"><strong>"ॐ हनुमते नमः"</strong></p>
+                                <h4 style="color: white; margin-top: 1rem;">गायत्री मंत्र:</h4>
+                                <p style="font-size: 1.1rem;"><strong>"ॐ आंजनेयाय विद्महे वायुपुत्राय धीमहि<br>तन्नो हनुमत् प्रचोदयात्"</strong></p>
+                            </div>
+                            <h4>मंत्र के लाभ:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li>भय और चिंता का नाश</li>
+                                <li>शारीरिक और मानसिक शक्ति में वृद्धि</li>
+                                <li>बुरी शक्तियों से सुरक्षा</li>
+                                <li>आत्मविश्वास में वृद्धि</li>
+                            </ul>
+                            <p><strong>जाप विधि:</strong> प्रातःकाल स्नान के बाद पूर्व या उत्तर दिशा में बैठकर 108 बार जाप करें।</p>
+                        `
+                    },
+                    'chalisa-verses': {
+                        title: '📿 हनुमान चालीसा',
+                        content: `
+                            <h3>श्रीमद् हनुमान चालीसा</h3>
+                            <div style="background: #f8f8f8; padding: 1rem; border-radius: 10px; margin: 1rem 0;">
+                                <h4>दोहा:</h4>
+                                <p><strong>श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि।<br>
+                                बरनउं रघुवर बिमल जसु, जो दायकु फल चारि।।</strong></p>
+                                
+                                <p><strong>बुद्धिहीन तनु जानिके, सुमिरौं पवन कुमार।<br>
+                                बल बुद्धि विद्या देहु मोहिं, हरहु कलेस बिकार।।</strong></p>
+                            </div>
+                            <h4>प्रमुख श्लोक:</h4>
+                            <div style="background: #fff3e0; padding: 1rem; border-radius: 10px; margin: 1rem 0;">
+                                <p><strong>जय हनुमान ज्ञान गुन सागर।<br>
+                                जय कपीस तिहुं लोक उजागर।।</strong></p>
+                                
+                                <p><strong>राम दूत अतुलित बल धामा।<br>
+                                अंजनी पुत्र पवनसुत नामा।।</strong></p>
+                            </div>
+                            <p>सम्पूर्ण चालीसा में 40 श्लोक हैं जो हनुमान जी की महिमा का वर्णन करते हैं।</p>
+                        `
+                    },
+                    'sankat-mochan': {
+                        title: '⚡ संकटमोचन मंत्र',
+                        content: `
+                            <h3>संकटमोचन हनुमान मंत्र</h3>
+                            <div style="background: linear-gradient(135deg, #f7931e, #fdcb6e); color: white; padding: 1.5rem; border-radius: 15px; margin: 1rem 0;">
+                                <h4 style="color: white;">मुख्य मंत्र:</h4>
+                                <p style="font-size: 1.3rem;"><strong>"संकट मोचन नाम तिहारो।<br>
+                                असुर निकंदन राम दुलारो।।"</strong></p>
+                            </div>
+                            <h4>अन्य शक्तिशाली मंत्र:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li><strong>"ॐ हं हनुमते नमः"</strong> - तुरंत संकट निवारण के लिए</li>
+                                <li><strong>"जय वीर हनुमान"</strong> - साहस और शक्ति के लिए</li>
+                                <li><strong>"पवन सुत हनुमान की जय"</strong> - सामान्य जाप के लिए</li>
+                            </ul>
+                            <h4>मंत्र का महत्व:</h4>
+                            <p>यह मंत्र विशेषकर कठिन समय में, संकट के समय, भय की स्थिति में अत्यंत प्रभावशाली है। नियमित जाप से जीवन की सभी समस्याओं का समाधान होता है।</p>
+                        `
+                    }
+                },
+                blogs: {
+                    'devotion-meaning': {
+                        title: '📝 भक्ति का सच्चा अर्थ',
+                        content: `
+                            <h3>भक्ति - केवल पूजा पाठ नहीं</h3>
+                            <p>आज के युग में भक्ति का मतलब अक्सर केवल मंदिर जाना, पूजा करना या व्रत रखना समझा जाता है। लेकिन वास्तव में भक्ति इससे कहीं अधिक गहरी और व्यापक अवधारणा है।</p>
+                            
+                            <h4>भक्ति के सच्चे आयाम:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li><strong>श्रद्धा:</strong> पूर्ण विश्वास और समर्पण</li>
+                                <li><strong>प्रेम:</strong> निःस्वार्थ भगवत् प्रेम</li>
+                                <li><strong>सेवा:</strong> दूसरों की निस्वार्थ सेवा</li>
+                                <li><strong>धैर्य:</strong> हर परिस्थिति में भगवान पर भरोसा</li>
+                            </ul>
+                            
+                            <h4>हनुमान जी से सीखें सच्ची भक्ति:</h4>
+                            <p>हनुमान जी राम भक्ति के आदर्श हैं। उनकी भक्ति में दिखावा नहीं, बल्कि पूर्ण समर्पण था। वे हमें सिखाते हैं कि भक्ति का मतलब है - हर सांस में प्रभु का स्मरण, हर कार्य में उनकी सेवा।</p>
+                            
+                            <h4>आज के समय में भक्ति:</h4>
+                            <p>आधुनिक जीवन में भक्ति का अर्थ है - ईमानदारी से काम करना, माता-पिता की सेवा, गरीबों की सहायता, और हर परिस्थिति में धैर्य रखना।</p>
+                        `
+                    },
+                    'hanuman-power': {
+                        title: '💪 हनुमान जी की अपार शक्ति',
+                        content: `
+                            <h3>वीर हनुमान - शक्ति और भक्ति के अनुपम संयोजन</h3>
+                            <p>हनुमान जी केवल शक्ति के देवता नहीं हैं, बल्कि वे शक्ति और भक्ति के अनूठे मिश्रण हैं। उनकी शक्ति उनकी राम भक्ति से आती है।</p>
+                            
+                            <h4>हनुमान जी की शक्तियां:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li><strong>अष्ट सिद्धि:</strong> अणिमा, महिमा, गरिमा, लघिमा, प्राप्ति, प्राकाम्य, ईशित्व, वशित्व</li>
+                                <li><strong>नव निधि:</strong> सभी संपत्तियों पर नियंत्रण</li>
+                                <li><strong>वायु पुत्र:</strong> हवा की गति से उड़ने की शक्ति</li>
+                                <li><strong>संकटमोचन:</strong> सभी विपत्तियों से मुक्ति दिलाने वाले</li>
+                            </ul>
+                            
+                            <h4>हमारे जीवन में हनुमान जी की शक्ति:</h4>
+                            <p>जब हम सच्चे दिल से हनुमान जी को याद करते हैं, तो वे हमें आंतरिक शक्ति देते हैं। डर को दूर करते हैं और कठिनाइयों का सामना करने की हिम्मत देते हैं।</p>
+                        `
+                    },
+                    'festivals-guide': {
+                        title: '🎉 व्रत और त्योहारों का महत्व',
+                        content: `
+                            <h3>धार्मिक त्योहारों और व्रतों की महत्ता</h3>
+                            <p>हिंदू धर्म में त्योहार और व्रत केवल रीति-रिवाज नहीं बल्कि आध्यात्मिक उन्नति के साधन हैं।</p>
+                            
+                            <h4>प्रमुख व्रत और त्योहार:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li><strong>हनुमान जयंती:</strong> चैत्र पूर्णिमा को मनाया जाने वाला महत्वपूर्ण त्योहार</li>
+                                <li><strong>मंगलवार व्रत:</strong> साप्ताहिक हनुमान व्रत</li>
+                                <li><strong>राम नवमी:</strong> श्री राम के जन्मदिन का उत्सव</li>
+                                <li><strong>संकष्टी चतुर्थी:</strong> गणेश जी का व्रत</li>
+                            </ul>
+                            
+                            <h4>व्रत करने के लाभ:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li>मानसिक शुद्धता</li>
+                                <li>आत्म-नियंत्रण का विकास</li>
+                                <li>शरीर की शुद्धि</li>
+                                <li>आध्यात्मिक शक्ति में वृद्धि</li>
+                            </ul>
+                        `
+                    },
+                    'meditation-power': {
+                        title: '🧘 ध्यान और आध्यात्म',
+                        content: `
+                            <h3>आध्यात्मिक जीवन में ध्यान की भूमिका</h3>
+                            <p>ध्यान केवल मन को शांत करने का तरीका नहीं है, बल्कि यह आत्मा से परमात्मा के मिलन का साधन है।</p>
+                            
+                            <h4>हनुमान ध्यान की विधि:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li><strong>आसन:</strong> स्वच्छ स्थान पर आरामदायक मुद्रा में बैठें</li>
+                                <li><strong>मंत्र:</strong> "ॐ हनुमते नमः" का जाप करें</li>
+                                <li><strong>श्वास:</strong> गहरी सांस लें और छोड़ें</li>
+                                <li><strong>स्मरण:</strong> हनुमान जी के रूप का ध्यान करें</li>
+                            </ul>
+                            
+                            <h4>ध्यान के फायदे:</h4>
+                            <ul style="text-align: left; margin: 1rem 0;">
+                                <li>मानसिक तनाव में कमी</li>
+                                <li>एकाग्रता में वृद्धि</li>
+                                <li>आत्मविश्वास का विकास</li>
+                                <li>आंतरिक शांति की प्राप्ति</li>
+                            </ul>
+                            
+                            <p>नियमित ध्यान से जीवन में सकारात्मक बदलाव आता है और हनुमान जी की कृपा प्राप्त होती है।</p>
+                        `
+                    }
+                }
+            };
+            
+            // Get content based on type and id
+            const content = contentData[type] && contentData[type][id];
+            
+            if (content) {
+                modalBody.innerHTML = `
+                    <h2>${content.title}</h2>
+                    ${content.content}
+                `;
+            } else {
+                modalBody.innerHTML = `
+                    <h2>Content Not Found</h2>
+                    <p>The requested content is not available at the moment.</p>
+                `;
+            }
+            
+            modal.style.display = 'block';
+        }
+
+        function closeContentModal() {
+            document.getElementById('contentModal').style.display = 'none';
+        }
+
         // Close modal when clicking outside
         window.onclick = function(event) {
-            const modal = document.getElementById('donateModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
+            const donateModal = document.getElementById('donateModal');
+            const contentModal = document.getElementById('contentModal');
+            
+            if (event.target === donateModal) {
+                donateModal.style.display = 'none';
+            }
+            
+            if (event.target === contentModal) {
+                contentModal.style.display = 'none';
             }
         }
 
@@ -601,16 +1135,37 @@
             });
         });
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'linear-gradient(135deg, rgba(255,107,53,0.95), rgba(247,147,30,0.95))';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #ff6b35, #f7931e)';
-                header.style.backdropFilter = 'none';
-            }
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to content items
+            const contentItems = document.querySelectorAll('.content-item');
+            contentItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add loading animation
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
         });
     </script>
 </body>
