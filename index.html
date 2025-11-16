@@ -74,14 +74,35 @@
         /* Hero Section */
         
         .hero {
-            background: linear-gradient(135deg, #ff6b35, #f7931e, #fdcb6e);
+            background: url('/mandir.jpeg') center/cover no-repeat fixed;
             color: white;
             text-align: center;
-            padding: 40px 0 80px;
+            padding: 100px 20px 80px;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            min-height: 900px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0;
         }
         
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.5), rgba(247, 147, 30, 0.5), rgba(253, 203, 110, 0.5));
+            z-index: 1;
+        }
+        
+        .hero > * {
+            position: relative;
+            z-index: 2;
+        }
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
@@ -90,29 +111,32 @@
         
         .temple-image {
             width: 100%;
-            max-width: 300px;
-            height: 500px;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            border-radius: 20px;
+            max-width: 500px;
+            height: auto;
+           
+            background: white;
+            border-radius: 30px;
+            
             margin: 2rem auto;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 1.2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s ease;
+            overflow: hidden;
         }
         
         .temple-image:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) translateY(-10px);
         }
         
         .temple-image img {
             width: 100%;
             height: 100%;
-            object-fit: relative;
-            border-radius: 20px;
+            object-fit: cover;
+            border-radius: 30px;
         }
         /* Infinite Text Border */
         
@@ -164,7 +188,8 @@
         .history-section,
         .sloks-section,
         .blogs-section {
-            background: rgba(255, 255, 255, 0.9);
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+        
             backdrop-filter: blur(10px);
         }
         
@@ -181,26 +206,78 @@
             overflow: hidden;
             margin: 2rem 0;
             position: relative;
+            align-items: center;
         }
         
         .content-scroll {
             display: flex;
             gap: 1rem;
-            animation: scroll-left 100s linear infinite;
-            animation-play-state: running;
+            transition: transform 0.3s ease;
             will-change: transform;
         }
         
-        .content-scroll.pause-scroll {
-            animation-play-state: paused !important;
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(0);
+        .nav-button:hover {
+            background: linear-gradient(135deg, #f7931e, #fdcb6e);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-button:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+        
+        .prev-btn {
+            left: 10px;
+        }
+        
+        .next-btn {
+            right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                background-attachment: scroll;
+                min-height: 800px;
+                padding: 130px 15px 80px;
             }
-            100% {
-                transform: translateX(-100%);
+            
+            .temple-image {
+                max-width: 320px;
+                margin: 1.5rem auto;
+            }
+            
+            .nav-button {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .prev-btn {
+                left: 5px;
+            }
+            
+            .next-btn {
+                right: 5px;
             }
         }
         
@@ -270,7 +347,7 @@
         /* Events Section */
         
         .events {
-            background: rgba(255, 255, 255, 0.9);
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
             backdrop-filter: blur(10px);
         }
         
@@ -520,7 +597,7 @@
         <div class="container">
 
             <div class="temple-image">
-                <img src="/logo.png" alt="Temple">
+                <img src="/log1.jpg" alt="Temple">
             </div>
             <div style="font-family: 'Noto Sans Devanagari', sans-serif; line-height: 1.8; max-width: 900px; margin: 0 auto; padding: 25px 35px; background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: justify;">
 
@@ -648,6 +725,7 @@
         <div class="container">
             <h2>नित्य आरती</h2>
             <div class="content-container">
+                <button class="nav-button prev-btn" onclick="scrollContent(this, -1)">❮</button>
                 <div class="content-scroll">
                     <div class="content-item">
                         <div class="content-image">
@@ -687,7 +765,7 @@
                     </div>
 
                 </div>
-
+                <button class="nav-button next-btn" onclick="scrollContent(this, 1)">❯</button>
             </div>
         </div>
         </div>
@@ -699,6 +777,7 @@
         <div class="container">
 
             <div class="content-container">
+                <button class="nav-button prev-btn" onclick="scrollContent(this, -1)">❮</button>
                 <div class="content-scroll">
                     <div class="content-item">
                         <div class="content-image">
@@ -748,6 +827,7 @@
                     <!-- Duplicated for infinite scroll -->
 
                 </div>
+                <button class="nav-button next-btn" onclick="scrollContent(this, 1)">❯</button>
             </div>
         </div>
     </section>
@@ -852,6 +932,18 @@
     </footer>
 
     <script>
+        // Scroll carousel content
+        function scrollContent(button, direction) {
+            const container = button.closest('.content-container');
+            const scrollDiv = container.querySelector('.content-scroll');
+            const itemWidth = container.querySelector('.content-item').offsetWidth + 16; // 16px is gap
+            const currentScroll = scrollDiv.style.transform ? 
+                parseInt(scrollDiv.style.transform.match(/-?\d+/)[0]) : 0;
+            const newScroll = currentScroll + (itemWidth * direction * -1);
+            
+            scrollDiv.style.transform = `translateX(${newScroll}px)`;
+        }
+        
         // Modal Functions
         function openDonateModal() {
             document.getElementById('donateModal').style.display = 'block';
